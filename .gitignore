@@ -1,0 +1,9 @@
+.build/
+.swiftpm/
+.xcode/
+.vscode/
+.DS_Store
+build/
+
+*.ppn
+*.bin

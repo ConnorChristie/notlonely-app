@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+message AudioFrame {
+  oneof content {
+    bytes pcm = 1;
+    string text = 2;
+  }
+}
+
+message AssistantFrame {
+  oneof content {
+    string partial_text = 1;
+    bytes tts_chunk = 2;
+  }
+}
+
+service NotLonely {
+  rpc Chat(stream AudioFrame) returns (stream AssistantFrame);
+} 
